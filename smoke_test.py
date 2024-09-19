@@ -30,4 +30,4 @@ def test_api_gateway():
     # Test routed response through API Gateway
     gateway_response = requests.get('http://localhost:8080/hello')
     assert gateway_response.status_code == 200
-    assert gateway_response.text == 'Hello fom Config Server!'
+    assert gateway_response.text == 'Hello from Config Server!'
