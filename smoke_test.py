@@ -2,13 +2,13 @@ import pytest
 import requests
 import logging
 
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+
 # Fixture for the base URL
 @pytest.fixture
 def base_url():
     return 'http://localhost'
-
-# Set up logging
-logging.basicConfig(level=logging.INFO)
 
 # Test services health
 @pytest.mark.parametrize("service_name, port", [
