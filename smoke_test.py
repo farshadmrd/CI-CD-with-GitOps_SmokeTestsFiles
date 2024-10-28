@@ -1,20 +1,16 @@
-import pytest
 import requests
 import logging
+import pytest
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 
-def pytest_addoption(parser):
-    parser.addoption("--base-url", action="store", default="http://127.0.0.1:8080", help="Base URL for the API Gateway")
-
-@pytest.fixture
-def base_url(request):
-    return request.config.getoption("--base-url")
+# Default base URL
+BASE_URL = "http://127.0.0.1:8080"
 
 # Test API Gateway response
-def test_api_gateway_response(base_url):
-    gateway_url = f"{base_url}/hello"
+def test_api_gateway_response():
+    gateway_url = f"{BASE_URL}/hello"
     logging.info(f"Testing API Gateway response at {gateway_url}...")
     
     try:
